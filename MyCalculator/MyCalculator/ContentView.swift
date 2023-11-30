@@ -8,45 +8,85 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var displayValue: String = "0"
+    @StateObject var viewModel = ContentViewModel()
     
     var body: some View {
         VStack {
             Spacer()
-            Text(displayValue)
-                .font(.system(size: 64))
-                .lineLimit(1)
-                .minimumScaleFactor(0.3)
+            displayView()
             Spacer()
             VStack {
                 HStack {
-                    DigitButton(icon: "1")
-                    DigitButton(icon: "2")
-                    DigitButton(icon: "3")
-                    OperButton(systemName: "divide")
+                    DigitButton(icon: "1") { num in
+                        viewModel.tapDigit(num)
+                    }
+                    DigitButton(icon: "2") { num in
+                        viewModel.tapDigit(num)
+                    }
+                    DigitButton(icon: "3") { num in
+                        viewModel.tapDigit(num)
+                    }
+                    OperButton(systemName: .Divide) { operType in
+                        viewModel.tapOper(operType)
+                    }
                 }
                 HStack {
-                    DigitButton(icon: "4")
-                    DigitButton(icon: "5")
-                    DigitButton(icon: "6")
-                    OperButton(systemName: "plus")
-                        
+                    DigitButton(icon: "4") { num in
+                        viewModel.tapDigit(num)
+                    }
+                    DigitButton(icon: "5") { num in
+                        viewModel.tapDigit(num)
+                    }
+                    DigitButton(icon: "6") { num in
+                        viewModel.tapDigit(num)
+                    }
+                    OperButton(systemName: .Plus) { operType in
+                        viewModel.tapOper(operType)
+                    }
                 }
                 HStack {
-                    DigitButton(icon: "7")
-                    DigitButton(icon: "8")
-                    DigitButton(icon: "9")
-                    OperButton(systemName: "minus")
+                    DigitButton(icon: "7") { num in
+                        viewModel.tapDigit(num)
+                    }
+                    DigitButton(icon: "8") { num in
+                        viewModel.tapDigit(num)
+                    }
+                    DigitButton(icon: "9") { num in
+                        viewModel.tapDigit(num)
+                    }
+                    OperButton(systemName: .Minus) { operType in
+                        viewModel.tapOper(operType)
+                    }
                 }
                 HStack {
-                    DigitButton(icon: "AC")
-                    DigitButton(icon: "0")
-                    DigitButton(icon: "")
-                    OperButton(systemName: "equal")
+                    DigitButton(icon: "AC") { _ in
+                        viewModel.clearCalculator()
+                    }
+                    
+                    DigitButton(icon: "0") { num in
+                        viewModel.tapDigit(num)
+                    }
+                    
+                    OperButton(systemName: .Multiply) { operType in
+                        viewModel.tapOper(operType)
+                    }
+                    
+                    OperButton(systemName: .Equal) { operType in
+                        viewModel.tapOper(operType)
+                    }
                 }
-                
             }
         }.padding()
+    }
+}
+
+extension ContentView {
+    private func displayView() -> some View {
+        Text("\(viewModel.displayValue)")
+            .foregroundStyle(viewModel.isTappedOper ? Color.gray : Color.primary)
+            .font(.system(size: 64))
+            .minimumScaleFactor(0.3)
+            .lineLimit(1)
     }
 }
 

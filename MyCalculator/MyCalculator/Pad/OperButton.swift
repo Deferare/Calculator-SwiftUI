@@ -8,19 +8,27 @@
 import SwiftUI
 
 struct OperButton: View {
-    let systemName: String
+    let systemName: ContentViewModel.OperType
+    let action: (ContentViewModel.OperType) -> ()
     
     var body: some View {
-        Circle()
-            .foregroundStyle(.brown)
-            .overlay(alignment: .center) {
-                Image(systemName: systemName)
-                    .font(.system(.largeTitle))
-                    .foregroundStyle(.background)
-            }
+        
+        Button(action: {
+            action(systemName)
+        }, label: {
+            Circle()
+                .foregroundStyle(.brown)
+                .overlay(alignment: .center) {
+                    Image(systemName: systemName.rawValue)
+                        .font(.system(.largeTitle))
+                        .foregroundStyle(.background)
+                }
+        })
     }
 }
 
 #Preview {
-    OperButton(systemName: "plus")
+    OperButton(systemName: ContentViewModel.OperType.Plus) { operType in
+        
+    }
 }

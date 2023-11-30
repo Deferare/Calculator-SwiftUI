@@ -13,6 +13,7 @@
 		E00B31ED2B154ABF004F8DCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E00B31EC2B154ABF004F8DCC /* Preview Assets.xcassets */; };
 		E00B320E2B154CB6004F8DCC /* DigitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00B320D2B154CB6004F8DCC /* DigitButton.swift */; };
 		E00B32102B1552DB004F8DCC /* OperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00B320F2B1552DB004F8DCC /* OperButton.swift */; };
+		E01FA9C12B16D57F00221811 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01FA9C02B16D57F00221811 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		E00B31EC2B154ABF004F8DCC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E00B320D2B154CB6004F8DCC /* DigitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitButton.swift; sourceTree = "<group>"; };
 		E00B320F2B1552DB004F8DCC /* OperButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperButton.swift; sourceTree = "<group>"; };
+		E01FA9C02B16D57F00221811 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +59,8 @@
 			children = (
 				E00B31E52B154ABE004F8DCC /* MyCalculatorApp.swift */,
 				E00B31E72B154ABE004F8DCC /* ContentView.swift */,
-				E00B32132B1554EB004F8DCC /* Display */,
+				E01FA9C02B16D57F00221811 /* ContentViewModel.swift */,
 				E00B32122B155499004F8DCC /* Pad */,
-				E00B32112B1553BE004F8DCC /* NumberPad */,
 				E00B31E92B154ABF004F8DCC /* Assets.xcassets */,
 				E00B31EB2B154ABF004F8DCC /* Preview Content */,
 			);
@@ -74,13 +75,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E00B32112B1553BE004F8DCC /* NumberPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NumberPad;
-			sourceTree = "<group>";
-		};
 		E00B32122B155499004F8DCC /* Pad */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,13 +82,6 @@
 				E00B320F2B1552DB004F8DCC /* OperButton.swift */,
 			);
 			path = Pad;
-			sourceTree = "<group>";
-		};
-		E00B32132B1554EB004F8DCC /* Display */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Display;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +158,7 @@
 				E00B32102B1552DB004F8DCC /* OperButton.swift in Sources */,
 				E00B31E62B154ABE004F8DCC /* MyCalculatorApp.swift in Sources */,
 				E00B320E2B154CB6004F8DCC /* DigitButton.swift in Sources */,
+				E01FA9C12B16D57F00221811 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

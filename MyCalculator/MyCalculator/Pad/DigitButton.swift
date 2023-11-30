@@ -9,17 +9,25 @@ import SwiftUI
 
 struct DigitButton: View {
     let icon: String
+    let action: (String) -> ()
     
     var body: some View {
-        Circle()
-            .overlay(alignment: .center) {
-                Text(icon)
-                    .font(.system(.title))
-                    .foregroundStyle(.background)
-            }
+        Button(action: {
+            action(icon)
+        }, label: {
+            Circle()
+                .foregroundStyle(.foreground)
+                .overlay(alignment: .center) {
+                    Text(icon)
+                        .font(.system(.title))
+                        .foregroundStyle(.background)
+                }
+        })
     }
 }
 
 #Preview {
-    DigitButton(icon: "0")
+    DigitButton(icon: "0") { number in
+        
+    }
 }
