@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct DigitButton: View {
-    let icon: String
-    let action: (String) -> ()
+    let icon: CalculatorViewModel.DigitType
+    let action: (CalculatorViewModel.DigitType) -> ()
     
     var body: some View {
         Button(action: {
@@ -18,7 +18,7 @@ struct DigitButton: View {
             Circle()
                 .foregroundStyle(.foreground)
                 .overlay(alignment: .center) {
-                    Text(icon)
+                    Text(icon.rawValue)
                         .font(.system(.title))
                         .foregroundStyle(.background)
                 }
@@ -27,7 +27,7 @@ struct DigitButton: View {
 }
 
 #Preview {
-    DigitButton(icon: "0") { number in
+    DigitButton(icon: .Zero) { number in
         
     }
 }
